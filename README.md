@@ -9,9 +9,9 @@ A JBossWeb valve that extends SigneSignOn valve and enables web apps like Seam w
 ## Build ##
 Notting fancy, clone and build this rep
 
-```git clone install```
-
-```mvn clean install```
+	git clone git://github.com/jensaug/jbossweb-customsso.git
+	cd jbossweb-customsso
+	mvn clean install
 
 ## Install ##
 * Copy ```target/customSso.jar``` to ```[JBOSS_HOME]/server/default/lib```
@@ -81,4 +81,4 @@ If needed, authenticating web app can besides "principal" also set following req
 So features like "reauthentication" should (untested) work if needed.
 
 ## Issues
-* Logging out in custom authenticated web app will not dispose cached entry I belive, so cache might grow.
+* Logging out (or expired sessions) in custom authenticated web app will not dispose cached entry I belive, so cache might grow.
