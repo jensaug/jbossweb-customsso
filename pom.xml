@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>se.redpill.jboss.as5</groupId>
+	<artifactId>customSso</artifactId>
+	<version>0.9</version>
+	<packaging>jar</packaging>
+
+	<name>customSso</name>
+	<url>http://www.redpill.se</url>
+
+	<properties>
+		<jboss.web.version>2.1.3.GA</jboss.web.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>jboss.web</groupId>
+			<artifactId>jbossweb</artifactId>
+			<version>${jboss.web.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>jboss.web</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${jboss.web.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>
