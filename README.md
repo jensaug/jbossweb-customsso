@@ -81,4 +81,4 @@ If needed, authenticating web app can besides "principal" also set following req
 So features like "reauthentication" should (untested) work if needed.
 
 ## Issues
-* Logging out (or expired sessions) in custom authenticated web app will not dispose cached entry I belive, so cache might grow.
+* Have not verified how this SSO cache evicts entries, but it should not differ from "standard" SingleSignOn handling. A little difference is that the custom web app cannot inform the valve that a user killed the session, but session expiration should not differ.
