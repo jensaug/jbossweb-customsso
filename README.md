@@ -1,7 +1,7 @@
 JBossWebCustomSigneSignOnValve
 ==============================
 
-A JBossWeb valve that extends SigneSignOn valve and enables web apps like Seam with non-custom authentication to store that principal object needed for SSO in other web-apps running on the same instance/host. This valve extends the "standard" SingleSignOn valve, so be sure to check out the documentation at https://community.jboss.org/wiki/JBossWebSingleSignOn
+A JBossWeb valve that extends SingleSignOn valve and enables web apps like Seam with non-custom authentication to store that principal object needed for SSO in other web-apps running on the same instance/host. This valve extends the "standard" SingleSignOn valve, so be sure to check out the documentation at https://community.jboss.org/wiki/JBossWebSingleSignOn
 
 Thus, you may easily create a "master" web app, e.g a Seam app that uses SAML2 for authentication, and "slave" web apps, that by adding a standard JEE security constraint in web.xml can rescrict usage to users that are already logged in.
 So split up big web-apps into smaller ones and enjoy the benifits of modularity - you can redeploy slave apps without forcing users to log in again.
