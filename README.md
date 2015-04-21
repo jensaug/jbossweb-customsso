@@ -1,4 +1,4 @@
-JBossWebCustomSigneSignOnValve
+JBossWebCustomSingleSignOnValve
 ==============================
 
 A JBossWeb valve that extends SingleSignOn valve and enables web apps like Seam with non-custom authentication to store that principal object needed for SSO in other web-apps running on the same instance/host. This valve extends the "standard" SingleSignOn valve, so be sure to check out the documentation at https://community.jboss.org/wiki/JBossWebSingleSignOn
@@ -51,7 +51,7 @@ public void ssoPrep() {
 	((HttpServletRequest) facesContext.getExternalContext().getRequest()).setAttribute("principal", identity.getPrincipal());
 }
 ```
-```CustomSigneSignOn``` will pick up this Principal, cache it and create a SSO cookie so other web apps can use SSO
+```CustomSingleSignOn``` will pick up this Principal, cache it and create a SSO cookie so other web apps can use SSO
 
 ### Web apps using already authenticated user sessions
 Basically nothing special, just enable standard security mechanisms.
@@ -70,7 +70,7 @@ Eg, in web.xml, add following section
 ```
 No ```<login-config>```, ```jboss-web.xml``` or ```security realms``` are needed - unless you want reauthenticate.
 
-```CustomSigneSignOn``` will (just as in ```SingleSignOn```) pick up the SSO cookie, look up the Principal object and set request.setNote that will enable authenticting the new session.
+```CustomSingleSignOn``` will (just as in ```SingleSignOn```) pick up the SSO cookie, look up the Principal object and set request.setNote that will enable authenticting the new session.
 
 ## Details
 The ```CustomSingleSignOn``` extends ```org.jboss.web.tomcat.service.sso.SingleSignOn```, so behaviour should be consistent except the extra action that happens if it finds a Principal object in Request. 
